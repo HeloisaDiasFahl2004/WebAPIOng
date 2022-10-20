@@ -11,6 +11,6 @@ namespace WebAPIOng.Models
         public string Familia { get; set; }
         public string Sexo { get; set; }
         public string Nome { get; set; }
-        public string Situacao { get; set; }
+        public string CpfAdotante { get; set; }
     }
 }

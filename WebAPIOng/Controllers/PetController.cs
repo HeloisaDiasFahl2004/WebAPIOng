@@ -31,7 +31,7 @@ namespace WebAPIOng.Controllers
         public ActionResult<Pet> AdicionaDog(Pet pet)
         {
             _petService.Create(pet);
-            return CreatedAtRoute("BuscaNome", pet.Nome);
+            return CreatedAtRoute("GetNome", pet.Nome);
         }
     }
 }

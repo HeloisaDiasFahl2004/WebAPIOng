@@ -39,7 +39,7 @@ namespace WebAPIOng
             services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
             services.AddSingleton<PetService>();
-            services.AddSingleton<AdotanteService>();
+  
         }
     
 
