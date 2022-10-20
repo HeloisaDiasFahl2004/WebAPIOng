@@ -28,10 +28,26 @@ namespace WebAPIOng.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Pet> AdicionaDog(Pet pet)
+        public ActionResult<Pet> AdicionaPet(Pet pet)
         {
             _petService.Create(pet);
             return CreatedAtRoute("GetNome", pet.Nome);
+        }
+        [HttpPut]
+        public ActionResult<Pet> AtualizaPet(Pet pet)
+        {
+            var dog = _petService.GetByName(pet.Nome);
+            if (dog == null) return NotFound();
+            _petService.Update(pet);
+            return NoContent();
+        }
+        [HttpDelete]
+        public ActionResult<Pet> Delete (Pet pet)
+        {
+            var dog = _petService.GetByName(pet.Nome);
+            if (dog == null) return NotFound();
+            _petService.Remove(pet);
+            return NoContent();
         }
     }
 }
