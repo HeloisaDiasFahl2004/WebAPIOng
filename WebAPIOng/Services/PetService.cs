@@ -14,6 +14,7 @@ namespace WebAPIOng.Services
             var database = con.GetDatabase(settings.DatabaseName);
             _pet = database.GetCollection<Pet>(settings.PetCollectionName);
         }
+
         public Pet Create(Pet pet)
         {
             _pet.InsertOne(pet);
