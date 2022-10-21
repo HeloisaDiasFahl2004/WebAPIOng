@@ -21,5 +21,6 @@ namespace WebAPIOng.Services
         }
         public List<Pet> GetAll() => _pet.Find<Pet>(pet => true).ToList();
         public Pet GetByName(string nome) => _pet.Find<Pet>(pet => pet.Nome == nome).FirstOrDefault();
+     
     }
 }
